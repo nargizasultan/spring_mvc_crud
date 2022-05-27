@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>save new course</title>
+</head>
+<body>
+<form action="#" th:action="@{/api/courses/save} " method="post" th:object="${emptyCourse}">
+    <label for="name">Name:</label>
+    <input id=name type="text" th:field="${emptyCourse.name} " placeholder="Nargiza">
+    <br><br>
+
+    <label for="address">Address:</label>
+    <input id=address type="text" th:field="${emptyCourse.address} " placeholder="Address">
+    <br><br>
+
+    <button type="submit">save</button>
+
+</form>
+
+<div>
+    <a th:href="@{/api/courses}">
+        <button >go back</button>
+    </a>
+</div>
+
+</body>
+</html>

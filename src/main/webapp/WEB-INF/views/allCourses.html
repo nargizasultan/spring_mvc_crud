@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Students</th>
+
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each="course : ${courseList}">
+        <td th:text="${course.Id}"></td>
+        <td th:text="${course.name}"></td>
+        <td th:text="${course.address}"></td>
+        <td>
+            <a th:href="@{'/api/students/find/by/'+${course.id}}">
+                <button>students</button>
+            </a>
+        </td>
+
+
+    </tr>
+
+    </tbody>
+</table>
+<div>
+    <a th:href="@{/api/courses/save}">
+    <button>save</button>
+    </a>
+</div>
+
+</body>
+</html>
